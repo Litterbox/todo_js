@@ -4,6 +4,7 @@ var addButton = document.getElementById('add_button');
 
 // DOM node creation and manipulation
 var addNewItem = function() {
+  /*
   // 3 ways:
 
   // 1. UNSAFE naive .innerHTML way, DO NOT DO:
@@ -26,6 +27,7 @@ var addNewItem = function() {
 
 
 
+  */
   // 2. without .innerHTML:
   var newItemText = document.createTextNode(newItem.value + ' ');
   // make sure you know why I'm appending a space at the end ^
@@ -39,6 +41,7 @@ var addNewItem = function() {
   newListItem.appendChild(newDeleteButton);
 
   todoList.appendChild(newListItem);
+  /*
 
 
 
@@ -49,6 +52,7 @@ var addNewItem = function() {
   newListItem.innerHTML += ' <button>x</button>';
 
   todoList.appendChild(newListItem);
+  */
 
 
 
