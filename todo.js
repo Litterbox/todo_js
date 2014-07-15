@@ -3,8 +3,8 @@ var newItem = document.getElementById('new_item');
 var addButton = document.getElementById('add_button');
 
 // DOM node creation and manipulation
-var addNewItem = function() {
-  var newItemText = document.createTextNode(newItem.value + ' ');
+var addNewItem = function(todoItem) {
+  var newItemText = document.createTextNode(todoItem + ' ');
   // make sure you know why I'm appending a space at the end ^
 
   var newDeleteButtonContents = document.createTextNode('x');
@@ -28,13 +28,21 @@ var addNewItem = function() {
   newItem.value = '';
 };
 
+// DOM value reading
+var addNewItemFromForm = function() {
+  addNewItem(newItem.value);
+};
+
 // basic event handler
-addButton.onclick = addNewItem;
+addButton.onclick = addNewItemFromForm;
 
 // event handler with if-statement
 newItem.onkeydown = function(event) {
   if (event.which === 13) {
-    addNewItem();
+    addNewItemFromForm();
   }
 };
 
+// initial todo items
+addNewItem('Write the HTML page for a todo list app');
+addNewItem('Write the JS so your todo list app works');
